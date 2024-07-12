@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de números</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Verificador de números</h1>
+        <p>Insira dois números, um em cada caixa abaixo, para verificar se o número B é maior que o número A:</p>
+        <form id="formNumero">
+            <input type="number" id="numeroA" required placeholder="Número A"/>
+            <input type="number" id="numeroB" required placeholder="Número B"/>
+            <button type="submit" id="enviar">Verificar</button>
+            <button type="reset" id="limpar">Limpar</button>
+        </form>
+        <p class="validacao"></p>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
