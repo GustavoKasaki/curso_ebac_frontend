@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;    
+}
+
+/*input-remove-arrows*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+body {
+    margin: 80px auto;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border: 1px solid black;
+}
+
+h1,
+p {
+    padding: 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin: 0 auto;
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 800px;
+}
+
+input {
+    margin: 10px 10px;
+    height: 64px;
+    width: 250px;
+    text-align: center;
+    font-size: 32px;
+}
+
+button {
+    margin: 10px 10px;
+    height: 48px;
+    width: 250px;
+    font-size: 16px;
+}
+
+.validacao {
+    border: 1px solid black;
+    width: 60%;
+    height: 64px;
+    margin: 16px auto;
+    font-size: 16px;
+    text-align: center;
+}
