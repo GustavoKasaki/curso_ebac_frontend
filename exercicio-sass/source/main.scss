@@ -1,0 +1,105 @@
+@use './config/reset.scss';
+@use './config/var.scss';
+@use 'sass:math';
+
+@mixin links() {
+    list-style: none;
+
+    a {
+        color: var.$linkColor;
+        text-decoration: none;
+    }
+}
+
+// px > em function
+@function pxEmFunction($pixelInput, $emOutput: 16) { //DO NOT USE UNITS, JUST NUMBERS
+    @return math.div($pixelInput, $emOutput)+em;
+}
+
+body {
+    background-color: var.$bgColor;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var.$bgHeader;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: pxEmFunction(16) 0;
+    }
+
+    .menu { //ul
+        display: flex;
+        @include links();
+
+        li {
+            font-weight: bold;
+            margin-left: pxEmFunction(24);
+        }
+    }
+}
+
+section {
+    padding: pxEmFunction(56) 0;
+
+    .products { //ul
+        margin-top: pxEmFunction(40);
+        display: grid;
+        grid-template-columns: repeat(3, 32.66%);
+        column-gap: 1%;
+        row-gap: 4%;
+        width: 100%;
+        @include links();
+
+        .product-item img { //li img
+            width: 100%;
+            border-radius: pxEmFunction(16);
+        }
+        
+        .product-button { //li a
+            display: block;
+            background-color: var.$buttonColor;
+            text-align: center;
+            padding: pxEmFunction(8) 0;
+            border-radius: pxEmFunction(8);
+            margin-top: pxEmFunction(8);
+        }
+
+        .product-button:hover { //li a:hover
+            background-color: lighten(var.$buttonColor, 10%);
+        }
+    }
+}
+
+// breakpoints
+@media screen and (max-width: var.$tablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    section .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: var.$mobile) {
+    section .products {
+        display: block;
+        
+        .product-item  {
+            margin-bottom: pxEmFunction(32);
+        }
+    }
+}
