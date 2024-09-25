@@ -1,0 +1,20 @@
+.produto {
+    &__img {
+        width: 100%;
+    }
+    
+    &__name {
+        font-size: 1.2em;
+        margin: 8px 0;
+    }
+    
+    &__desc {
+        color: gray;
+    }
+    
+    &--is-highlight {
+        border: 2px solid gold;
+        padding: 8px;
+        background-color: #ffff42;
+    }
+}
