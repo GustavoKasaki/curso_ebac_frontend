@@ -27,3 +27,25 @@ const carroDaMaria = new Carro('Ka', 'Ford', 2021, 2020);
 console.log(carro);
 console.log(carroDoJoao);
 console.log(carroDaMaria);
+
+
+const nome = 'Gustavo';
+const idade = '28';
+const maiorDeIdade = true;
+const conhecimentos = ['html', 'css', 'javascript'];
+
+const pessoa = {
+    nome: nome,
+    idade: idade,
+    maiorDeIdade: maiorDeIdade,
+    conhecimentos: conhecimentos
+}
+
+console.log(typeof nome); //'typeof' = retorna o tipo da variavel 'nome'
+console.log(typeof idade);
+console.log(typeof maiorDeIdade);
+console.log(typeof conhecimentos);
+console.log(typeof pessoa);
+
+console.log(carroDaMaria instanceof Carro); //'instanceof' = retorna se a instancia de determinado objeto
+console.log(conhecimentos instanceof Array);
