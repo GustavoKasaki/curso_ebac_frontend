@@ -1,3 +1,4 @@
+// classe de abstração
 function Computador(os, ram, gpu, cpu, armazenamento) {
     this.os = os;
     let _ram = ram;
@@ -16,7 +17,7 @@ function Computador(os, ram, gpu, cpu, armazenamento) {
     }
 }
 
-
+// classe herdeira 1
 function Desktop(os, ram, gpu, cpu, armazenamento, gabinete) {
     Computador.call(this, os, ram, gpu, cpu, armazenamento);
     this.gabinete = gabinete;
@@ -32,6 +33,7 @@ function Desktop(os, ram, gpu, cpu, armazenamento, gabinete) {
     }
 }
 
+// classe herdeira 2
 function Notebook(os, ram, gpu, cpu, armazenamento, bateria, tela) {
     Computador.call(this, os, ram, gpu, cpu, armazenamento);
     this.bateria = bateria;
@@ -48,13 +50,18 @@ function Notebook(os, ram, gpu, cpu, armazenamento, bateria, tela) {
     }
 }
 
+// Instância 1
 const desktop1 = new Desktop('Windows 11', 16, 'NVidia GeForce RTX 3060', 'Intel Core i5-10600KF', '3TB', 'mid-tower');
-const desktop2 = new Desktop('Windows 11', 32, 'NVidia GeForce RTX 4090', 'Intel Core i7-14700K', '5TB', 'full-tower');
-const notebook1 = new Notebook('Linux Ubuntu', 8, 'Onboard', 'Intel Core i3 7100', '512GB', '37Wh', '15.6"');
-
 console.log(desktop1);
+
+// Instância 2
+const desktop2 = new Desktop('Windows 11', 32, 'NVidia GeForce RTX 4090', 'Intel Core i7-14700K', '5TB', 'full-tower');
 console.log(desktop2);
+
+// Instância 3
+const notebook1 = new Notebook('Linux Ubuntu', 8, 'Onboard', 'Intel Core i3 7100', '512GB', '37Wh', '15.6"');
 console.log(notebook1);
+
 
 // Memoria RAM do desktop1 antes do upgrade de 16gb
 desktop1.upgradeRam(0);
