@@ -4,11 +4,13 @@ var redesSociais = ['Facebook', 'Instagram', 'Twitter'];
 for (var i = 0; i < redesSociais.length; i++) {
   console.log("Eu tenho perfil na rede social: ".concat(redesSociais[i]));
 }
+
+// .forEach = faz iteração com arrays, sem retornar
 redesSociais.forEach(function (item, indice) {
   console.log("#".concat(indice, " Eu tenho perfil na rede social: ").concat(item));
 });
 
-// .map = loop de repetição
+// .map = loop de repetição para manipulação de arrays
 var numeros = [1, 2, 3, 4, 5];
 var dobroDosNumeros = numeros.map(function (numeroAtual) {
   numeroAtual = numeroAtual * 2;
@@ -35,12 +37,12 @@ var indiceDaPaula = alunos2.findIndex(function (item) {
   return item.nome == 'Paula';
 });
 console.log(indiceDaPaula);
+
+//.every = aplica para todos os itens do array
 alunos2.push({
   nome: 'Lucio',
   curso: 'Backend'
 });
-
-//.every = aplica para todos os itens do array
 var todosAlunosSaoFrontend = alunos2.every(function (item) {
   return item.curso == 'Frontend';
 });
@@ -74,3 +76,7 @@ for (var _i = 0; _i < nums.length; _i++) {
   somaComFor += nums[_i];
 }
 console.log(somaComFor);
+var nomeDosAlunos = alunos2.reduce(function (acc, itemAtual) {
+  return acc += "".concat(itemAtual.nome, " ");
+}, '');
+console.log(nomeDosAlunos);

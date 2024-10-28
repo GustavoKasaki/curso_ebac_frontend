@@ -80,3 +80,8 @@ for (let i = 0; i < nums.length; i++) {
     somaComFor += nums[i]
 }
 console.log(somaComFor)
+
+const nomeDosAlunos = alunos2.reduce(function(acc, itemAtual) {
+    return acc += `${itemAtual.nome} `
+}, '')
+console.log(nomeDosAlunos)
