@@ -1,4 +1,4 @@
-# Módulo 24 - Recursos do ES6+
+# Módulo 25 - Recursos do ES6+
 
 ## 📝 Objetivos do módulo
 
