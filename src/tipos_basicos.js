@@ -24,3 +24,7 @@ dadosApi = true;
 dadosApi = [1, 2, 3];
 dadosApi = 'string';
 console.log(dadosApi);
+// Tipagem implícita
+let curso = 'front-end'; // as '' indicam que o tipo da variavel é uma string
+// Tipagem explícita
+let salario = 3000; // a sequência (: number) define que o tipo da variavel é um número
