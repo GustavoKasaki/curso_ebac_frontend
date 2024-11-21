@@ -1,29 +1,11 @@
-# vue-project
+# Módulo 27 - VueJS
 
-This template should help get you started developing with Vue 3 in Vite.
+## 📝 Objetivos do módulo
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+- Conheceu o VueJs, sua relação com o JavaScript e suas principais vantagens;
+- Compreendeu como é possível integrar o VueJs com o HTML e utilizar o JavaScript para criar interações dinâmicas;
+- Compreendeu como é possível renderizar elementos de forma condicional, baseado em determinadas condições;
+- Analisou como é possível utilizar eventos para manipular dados e como a reatividade do VueJs facilita a atualização automática dos elementos na tela;
+- Compreendeu como é possível aplicar estilos de forma condicional, baseado em determinadas condições;
+- Apresentar como é possível utilizar o VueJs para manipular listas de elementos e facilitar sua renderização;
+- Conheceu o conceito de componentização no VueJs, como criar componentes reutilizáveis e como utilizar propriedades para personalizar sua renderização.
