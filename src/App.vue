@@ -1,47 +1,28 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+  const nome = 'Gustavo';
+  const meuObj = {
+    nome: 'Gustavo',
+    filmeFavorito: 'Interestelar'
+  }
+
+  function dizOla(nome) {
+    return `${nome} diz oi!`;
+  }
+
+  const imagem1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTahq7Z9uS_23YzITkC1_aF2xK90Mq3BmyVhg&s';
+  const imagem2 = 'https://media.contentapi.ea.com/content/dam/gin/images/2017/01/crysis-3-keyart.jpg.adapt.crop1x1.767p.jpg';
+
+  const botaoEstaDesabilitado = true;
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <h1>{{ nome }}</h1> <!-- {{ }} = 'double mustache', para manipulação do DOM -->
+  <h1>{{ dizOla('Paula') }}</h1>
+  <img v-bind:src="imagem1" alt=""> <!-- 'v-bind:atributo' = vincula o js com o DOM -->
+  <img :src="imagem2" alt=""> <!-- ':atributo' = atalho para vincular o js sem escrever v-bind-->
+  <button :disabled="botaoEstaDesabilitado">Enviar mensagem</button>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
