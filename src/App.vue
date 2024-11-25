@@ -25,6 +25,8 @@ import { reactive } from 'vue';
   const estado = reactive({
     contador: 0,
     email: '',
+    saldo: 5000,
+    transferindo: 0,
   })
 
   function incrementar() {
@@ -37,6 +39,16 @@ import { reactive } from 'vue';
 
   function alteraEmail(evento) {
     estado.email = evento.target.value;
+  }
+
+  function mostraSaldoFuturo() {
+    const {saldo, transferindo} = estado;
+    return saldo - transferindo;
+  }
+
+  function validaValorTransferencia() {
+    const {saldo, transferindo} = estado;
+    return saldo >= transferindo;
   }
 
 </script>
@@ -65,10 +77,29 @@ import { reactive } from 'vue';
 
   {{ estado.email }}
   <input type="email" @keyup="alteraEmail">
+
+  <br>
+  <hr>
+
+  Saldo: {{ estado.saldo }} <br>
+  Transferindo: {{ estado.transferindo }} <br>
+  Saldo depois da transferência: {{ mostraSaldoFuturo() }}<br>
+  <input class="campo" :class="{ invalido: !validaValorTransferencia() }" @keyup="evento => estado.transferindo = evento.target.value" type="number" placeholder="Quantia para transferir">
+  <button v-if="validaValorTransferencia()">Transferir</button>
+  <span v-else>Saldo insuficiente</span>
 </template>
 
 <style scoped>
   img {
     max-width: 200px;
+  }
+
+  .invalido {
+    outline-color: red;
+    border-color: red;
+  }
+
+  .campo {
+    border: 1px solid black;
   }
 </style>
