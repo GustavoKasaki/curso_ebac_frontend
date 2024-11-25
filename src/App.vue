@@ -27,6 +27,8 @@ import { reactive } from 'vue';
     email: '',
     saldo: 5000,
     transferindo: 0,
+    nomes: ['Gustavo', 'Liliane', 'Renan', 'Cintia'],
+    nomeAInserir: '',
   })
 
   function incrementar() {
@@ -49,6 +51,14 @@ import { reactive } from 'vue';
   function validaValorTransferencia() {
     const {saldo, transferindo} = estado;
     return saldo >= transferindo;
+  }
+
+  function cadastraNome() {
+    if (estado.nomeAInserir.length >= 3) {
+      estado.nomes.push(estado.nomeAInserir);
+    } else {
+      alert('Digite mais caracteres!');
+    }
   }
 
 </script>
@@ -87,6 +97,21 @@ import { reactive } from 'vue';
   <input class="campo" :class="{ invalido: !validaValorTransferencia() }" @keyup="evento => estado.transferindo = evento.target.value" type="number" placeholder="Quantia para transferir">
   <button v-if="validaValorTransferencia()">Transferir</button>
   <span v-else>Saldo insuficiente</span>
+
+  <br>
+  <hr>
+
+  <ul>
+    <li v-for="nome in estado.nomes"> <!-- 'v-for' = similar ao forEach -->
+      {{ nome }}
+    </li>
+  </ul>
+  <input @keyup="evento => estado.nomeAInserir = evento.target.value" type="text" placeholder="Digite um novo nome">
+  <button @click="cadastraNome" type="button">Cadastrar nome</button>
+
+  <h3 v-for="nome in estado.nomes">
+    {{ nome }}
+  </h3>
 </template>
 
 <style scoped>
