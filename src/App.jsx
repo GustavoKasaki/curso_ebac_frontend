@@ -1,22 +1,27 @@
 import { useState } from "react";
 
 import Perfil from "./components/Perfil";
-import Formulario from "./components/Formulario";
 import ReposList from "./components/ReposList";
 
 function App() {
-  const [formularioVisivel, setFormularioVisivel] = useState(true);
+  const [nomeUsuario, setNomeUsuario ] = useState('');
 
   return (
     <>
-      <Perfil nome='Gustavo' endereco='https://github.com/GustavoKasaki.png' />
-      <ReposList />
+      <div className="container search">
+        <div className="logo">
+          <img src="https://github.githubassets.com/assets/GitHub-Logo-ee398b662d42.png"/>
+          <h2>Repos</h2>
+        </div>
+        <input className="input" type="text" placeholder="Digite o nome de usuario" onBlur={(e) => setNomeUsuario(e.target.value)} />
+      </div>
 
-      {/* <button onClick={() => setFormularioVisivel(!formularioVisivel)} type="button">Toggle form</button>
-      {formularioVisivel && (
-        <Formulario />
-      )} */}
-      
+      { nomeUsuario.length > 4 && (
+        <>
+          <Perfil nomeUsuario={nomeUsuario} />
+          <ReposList nomeUsuario={nomeUsuario} />
+        </>
+      )}
     </>
   )
 }
