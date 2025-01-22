@@ -11,11 +11,11 @@ function App() {
 
   return (
     <div className="App">
-      <input type="text" value={tempTask} onChange={e => setTempTask(e.target.value)}/>
-      <button onClick={registerTask} type="button">Register</button>
+      <input data-testid='task-field' type="text" value={tempTask} onChange={e => setTempTask(e.target.value)}/>
+      <button data-testid='task-btn' onClick={registerTask} type="button">Register</button>
       <ul>
         {tasks.map(task => (
-          <li>{task}</li>
+          <li key={task}>{task}</li>
         ))}
       </ul>
     </div>
